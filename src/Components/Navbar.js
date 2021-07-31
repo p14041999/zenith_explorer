@@ -19,8 +19,8 @@ class Navbar extends Component {
             <span>Explorer (BETA)</span>
           </div>
           <div id="nav-child2">
-            <button className="mx-1">Mainnet Beta</button>
-            <button className="mx-1">Testnet Beta</button>
+            <button className="mx-1 text-light">Mainnet Beta</button>
+            <button className="mx-1 text-light">Testnet Beta</button>
           </div>
           <MenuIcon
             onClick={this.handleNavClixk}

@@ -130,6 +130,9 @@ p {
 .mcontainer {
   margin: 0px 226px;
 }
+.pcontainer {
+  margin: 0px 51px;
+}
 
 // Padding Set
 .p-1 {
@@ -333,6 +336,15 @@ p {
 .row-center {
   display: flex;
   justify-content: center;
+  align-items: center;
+  .col {
+    width: 45%;
+  }
+}
+.column-center {
+  flex-direction: column;
+  display: flex;
+  justify-content: flex-start;
   align-items: center;
   .col {
     width: 45%;

@@ -2,8 +2,11 @@ import React, { Component } from "react";
 import "./App.scss";
 import Navbar from "./Components/Navbar";
 import Search from "./Components/Search";
-import Cards from "./Components/Cards";
-import Table1 from "./Components/Table";
+import Main from "./Components/Main";
+import Address from "./Components/Address";
+import Tx from "./Components/Tx";
+import Token from "./Components/Token";
+
 import "./Styles/Mobile.scss";
 
 class App extends Component {
@@ -12,9 +15,8 @@ class App extends Component {
       <div>
         <Navbar />
         <Search />
-        <Cards />
-        <Table1 />
-        <Table1 />
+        {/* <Main /> */}
+        <Token />
       </div>
     );
   }
