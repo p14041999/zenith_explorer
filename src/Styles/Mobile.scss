@@ -1,0 +1,37 @@
+@media only screen and (max-width: 900px) {
+  .card-cont {
+    flex-direction: column;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    .card {
+      margin: 10px 0px;
+    }
+  }
+  .search {
+    width: 90%;
+    font-size: 1rem;
+    input {
+      font-size: initial;
+      line-break: auto;
+    }
+  }
+  .hamburger {
+    display: block !important;
+    color: white;
+  }
+  #navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10%;
+    padding: 0 36px;
+    button {
+      justify-content: space-between;
+      display: none;
+    }
+  }
+  .table {
+    margin: 0 10px;
+  }
+}
