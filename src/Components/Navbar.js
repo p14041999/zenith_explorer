@@ -1,14 +1,31 @@
 import React, { Component } from "react";
 import "../Styles/Navbar.scss";
+import { Link } from "react-router-dom";
 import logo from "../Assests/logoblue.svg";
 import MenuIcon from "@material-ui/icons/Menu";
+import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
+import CommentIcon from "@material-ui/icons/Comment";
 class Navbar extends Component {
   state = {
     navbar: false,
+    link: window.location.pathname,
   };
   handleNavClixk = () => {
     this.setState({ navbar: !this.state.navbar });
   };
+  handleDashClick = () => {
+    this.setState({ link: "/" });
+  };
+  handleTokensClick = () => {
+    this.setState({ link: "/tokens" });
+  };
+  handleTransClick = () => {
+    this.setState({ link: "/transactions" });
+  };
+  handleBlocksClick = () => {
+    this.setState({ link: "/blocks" });
+  };
+
   render() {
     return (
       <>
@@ -18,9 +35,15 @@ class Navbar extends Component {
             <h2>ZENITH</h2>
             <span>Explorer (BETA)</span>
           </div>
-          <div id="nav-child2">
-            <button className="mx-1 text-light">Mainnet Beta</button>
-            <button className="mx-1 text-light">Testnet Beta</button>
+          <div id="nav-child2" className="row-center">
+            <button className="mx-1 row-center">
+              <span className="text-light">Mainnet Beta</span>
+              <ArrowDropDownIcon className="text-light " />
+            </button>
+            <div id="commBtn">
+              <CommentIcon />
+            </div>
+            {/* <button className="mx-1 text-light">Testnet Beta</button> */}
           </div>
           <MenuIcon
             onClick={this.handleNavClixk}
@@ -36,6 +59,48 @@ class Navbar extends Component {
             </ul>
           </div>
         ) : null}
+        {/* <div className="sub-nav">
+          <ul className="row container ">
+            <li>
+              <Link
+                onClick={this.handleDashClick}
+                className={this.state.link == "/" ? "active" : "link"}
+                to="/"
+              >
+                Dashboard
+              </Link>
+            </li>
+            <li>
+              <Link
+                onClick={this.handleTransClick}
+                className={
+                  this.state.link == "/transactions" ? "active" : "link"
+                }
+                to="/transactions"
+              >
+                Transactions
+              </Link>
+            </li>
+            <li>
+              <Link
+                onClick={this.handleBlocksClick}
+                className={this.state.link == "/blocks" ? "active" : "link"}
+                to="/blocks"
+              >
+                Blocks
+              </Link>
+            </li>
+            <li>
+              <Link
+                onClick={this.handleTokensClick}
+                className={this.state.link == "/tokens" ? "active" : "link"}
+                to="/tokens"
+              >
+                Tokens
+              </Link>
+            </li>
+          </ul>
+        </div> */}
       </>
     );
   }

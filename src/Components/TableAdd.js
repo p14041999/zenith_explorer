@@ -1,7 +1,25 @@
 import React, { Component } from "react";
 import "../Styles/Table1.scss";
+import Web3 from "web3";
 
 class Table extends Component {
+  state = {
+    balance: 0,
+    price: 1.8,
+    address: "",
+  };
+  async componentDidMount() {
+    const web3 = new Web3("https://bsc-dataseed.binance.org/");
+    await this.setState({
+      address: this.props.address.params.id,
+    });
+    // console.log(this.state.address);
+    // console.log(this.props.address.params.id.toLowerCase());
+    const bal = await web3.eth.getBalance(this.state.address);
+    // console.log("bal", web3.utils.fromWei(bal.toString()));
+    this.setState({ balance: web3.utils.fromWei(bal.toString()) });
+    // console.log(this.props.address.params.id);
+  }
   render() {
     return (
       <div className="pcontainer table">
@@ -13,17 +31,17 @@ class Table extends Component {
           </tr>
           <tr>
             <td>Address </td>
-            <td id="content">Buc3Jp2fWSWE79pXBBdDmFM3ubJo8HGDqn3H14XKSKHi</td>
+            <td id="content">{this.state.address}</td>
           </tr>
           <tr>
             <td>Balance </td>
-            <td id="content">0 ZTR</td>
+            <td id="content">{this.state.balance} ZTC</td>
           </tr>
-          <tr>
-            <td>ZTR Value</td>
-            <td id="content">$0.00</td>
+          <tr style={{ borderBottom: "none" }}>
+            <td>ZTC Value</td>
+            <td id="content">${this.state.price * this.state.balance}</td>
           </tr>
-          <tr>
+          {/* <tr>
             <td>Contract Creator </td>
             <td id="content">0*fokjhsdl3iv124jasjflug</td>
           </tr>
@@ -33,7 +51,7 @@ class Table extends Component {
             <td id="content" style={{ borderBottom: "none" }}>
               Zenith Chain(ZTR)
             </td>
-          </tr>
+          </tr> */}
         </table>
       </div>
     );

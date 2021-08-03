@@ -333,6 +333,14 @@ p {
     width: 45%;
   }
 }
+.rowcs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .col {
+    width: 45%;
+  }
+}
 .row-center {
   display: flex;
   justify-content: center;

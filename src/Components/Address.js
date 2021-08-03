@@ -7,13 +7,12 @@ class Address extends Component {
   render() {
     return (
       <div>
-        <div className="text-light head">
-          <p>DETAILS</p>
-          <h3>Account</h3>
+        <div className="text-light head py-3">
+          <h3>Account Details</h3>
+          {/* <p></p> */}
         </div>
 
-        <Overview />
-        <Trans />
+        <Overview address={this.props.match} />
       </div>
     );
   }

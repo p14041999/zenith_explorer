@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Overview from "./TableTx";
+import TxOverview from "./TableTx";
 import "../Styles/Address.scss";
 
 class Tx extends Component {
@@ -10,7 +10,7 @@ class Tx extends Component {
           <h3>Transactions Details</h3>
         </div>
 
-        <Overview />
+        <TxOverview txHash={this.props.match.params.id} />
       </div>
     );
   }

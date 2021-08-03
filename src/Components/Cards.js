@@ -5,7 +5,7 @@ class Cards extends Component {
   render() {
     return (
       <div>
-        <div className="card-cont mcontainer row">
+        <div className="card-cont py-2 mcontainer row">
           <div className="card darkBack p-1 px-3 text-light">
             <h3>Circulating Supply</h3>
             <h2 className="text-primary">1M</h2>
