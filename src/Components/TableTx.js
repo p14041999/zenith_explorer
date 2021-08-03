@@ -12,7 +12,7 @@ class Table extends Component {
     timestamp: {},
   };
   async componentDidMount() {
-    const web3 = new Web3("https://bsc-dataseed.binance.org/");
+    const web3 = new Web3("https://dataserver-1.zenithchain.co/");
     // console.log(await web3.eth.getBlock("latest"));
 
     const objTx = await web3.eth.getTransaction(this.props.txHash);

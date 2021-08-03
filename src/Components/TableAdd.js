@@ -9,7 +9,7 @@ class Table extends Component {
     address: "",
   };
   async componentDidMount() {
-    const web3 = new Web3("https://bsc-dataseed.binance.org/");
+    const web3 = new Web3("https://dataserver-1.zenithchain.co/");
     await this.setState({
       address: this.props.address.params.id,
     });
