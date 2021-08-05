@@ -20,6 +20,12 @@ class Table extends Component {
     this.setState({ balance: web3.utils.fromWei(bal.toString()) });
     // console.log(this.props.address.params.id);
   }
+  numberWithCommas = (x) => {
+    x = x.toString();
+    var pattern = /(-?\d+)(\d{3})/;
+    while (pattern.test(x)) x = x.replace(pattern, "$1,$2");
+    return x;
+  };
   render() {
     return (
       <div className="pcontainer table">
@@ -35,11 +41,15 @@ class Table extends Component {
           </tr>
           <tr>
             <td>Balance </td>
-            <td id="content">{this.state.balance} ZTC</td>
+            <td id="content">
+              {this.numberWithCommas(this.state.balance)} ZTC
+            </td>
           </tr>
           <tr style={{ borderBottom: "none" }}>
             <td>ZTC Value</td>
-            <td id="content">${this.state.price * this.state.balance}</td>
+            <td id="content">
+              ${this.numberWithCommas(this.state.price * this.state.balance)}
+            </td>
           </tr>
           {/* <tr>
             <td>Contract Creator </td>
