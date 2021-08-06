@@ -32,6 +32,13 @@ class Table extends Component {
       gasfees: gasfees,
     });
   }
+  numberWithCommas = (x) => {
+    x = x.toString();
+    var pattern = /(-?\d+)(\d{3})/;
+    while (pattern.test(x)) x = x.replace(pattern, "$1,$2");
+    return x;
+  };
+
   render() {
     return (
       <div className="pcontainer table">
@@ -47,7 +54,36 @@ class Table extends Component {
           </tr>
           <tr>
             <td>Status </td>
-            <td id="content">{this.state.status ? "SUCCESS" : "FAIL"}</td>
+            <td
+              id="content"
+              style={{ display: "flex", justifyContent: "flex-end" }}
+            >
+              {this.state.status ? (
+                <div
+                  className="text-center borRad"
+                  style={{
+                    borderRadius: 10,
+                    color: "green",
+                    width: 90,
+                    backgroundColor: "#5ee068",
+                  }}
+                >
+                  SUCCESS
+                </div>
+              ) : (
+                <div
+                  className="text-center borRad"
+                  style={{
+                    borderRadius: 10,
+                    color: "#7c0909",
+                    width: 90,
+                    backgroundColor: "rgb(237 76 76)",
+                  }}
+                >
+                  FAIL
+                </div>
+              )}
+            </td>
           </tr>
           <tr>
             <td>Block</td>
@@ -63,13 +99,13 @@ class Table extends Component {
           </tr>
           <tr>
             <td>Value </td>
-            <td id="content">{this.state.value} ZTC</td>
+            <td id="content">{this.numberWithCommas(this.state.value)} ZTC</td>
           </tr>
 
           <tr>
             <td style={{ borderBottom: "none" }}>Transaction Fee</td>
             <td id="content" style={{ borderBottom: "none" }}>
-              {this.state.gasfees} ZTC
+              {this.numberWithCommas(this.state.gasfees)} ZTC
             </td>
           </tr>
         </table>
