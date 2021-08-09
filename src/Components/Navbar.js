@@ -31,7 +31,9 @@ class Navbar extends Component {
       <>
         <div className="container   darkBack" id="navbar">
           <div className="row-center text-light" id="nav-child1">
-            <img alt="" src={logo} />
+            <Link to="/">
+              <img alt="" src={logo} />
+            </Link>
             <h2>ZENITH</h2>
             <span>Explorer (BETA)</span>
           </div>
