@@ -26,6 +26,11 @@ class Table extends Component {
     while (pattern.test(x)) x = x.replace(pattern, "$1,$2");
     return x;
   };
+  numberWithCommas2 = (x) => {
+    var parts = x.toString().split(".");
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return parts.join(".");
+  };
   render() {
     return (
       <div className="pcontainer table">
@@ -42,13 +47,13 @@ class Table extends Component {
           <tr>
             <td>Balance </td>
             <td id="content">
-              {this.numberWithCommas(this.state.balance)} ZTC
+              {this.numberWithCommas2(this.state.balance)} ZTC
             </td>
           </tr>
           <tr style={{ borderBottom: "none" }}>
             <td>ZTC Value</td>
             <td id="content">
-              ${this.numberWithCommas(this.state.price * this.state.balance)}
+              ${this.numberWithCommas2(this.state.price * this.state.balance)}
             </td>
           </tr>
           {/* <tr>

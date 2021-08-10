@@ -38,6 +38,11 @@ class Table extends Component {
     while (pattern.test(x)) x = x.replace(pattern, "$1,$2");
     return x;
   };
+  numberWithCommas2 = (x) => {
+    var parts = x.toString().split(".");
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return parts.join(".");
+  };
 
   render() {
     return (
@@ -99,13 +104,13 @@ class Table extends Component {
           </tr>
           <tr>
             <td>Value </td>
-            <td id="content">{this.numberWithCommas(this.state.value)} ZTC</td>
+            <td id="content">{this.numberWithCommas2(this.state.value)} ZTC</td>
           </tr>
 
           <tr>
             <td style={{ borderBottom: "none" }}>Transaction Fee</td>
             <td id="content" style={{ borderBottom: "none" }}>
-              {this.numberWithCommas(this.state.gasfees)} ZTC
+              {this.numberWithCommas2(this.state.gasfees)} ZTC
             </td>
           </tr>
         </table>
