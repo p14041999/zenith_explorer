@@ -10,27 +10,27 @@ class Cards extends Component {
             <h3>Circulating Supply</h3>
             <h2 className="text-primary">1M</h2>
             <span>/21M</span>
-            <p>
+            {/* <p>
               <span className="text-primary">55.8%</span> is circulating
-            </p>
+            </p> */}
           </div>
           <div className="card darkBack p-1 px-3 text-light">
             <h3>Total Holdings</h3>
             <h2 className="text-primary">1M</h2>
             <span>/21M</span>
-            <p>
+            {/* <p>
               Delinquent stake:{""}
               <span className="text-primary">50.6%</span>
-            </p>
+            </p> */}
           </div>
           <div className="card darkBack p-1 px-3 text-light">
             <h3>Price</h3>
-            <h2 className="text-primary">$1</h2>
+            <h2 className="text-primary">$1.800</h2>
             {/* <span>/21M</span> */}
-            <p>
+            {/* <p>
               MCap: <span className="text-primary">55.8%</span>
               is circulating
-            </p>
+            </p> */}
           </div>
         </div>
       </div>

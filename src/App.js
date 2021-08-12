@@ -10,6 +10,7 @@ import Tx from "./Components/Tx";
 import Token from "./Components/Token";
 import TokenO from "./Components/TokenO";
 import Blocks from "./Components/Blocks";
+import Error from "./Components/Error";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./Styles/Mobile.scss";
@@ -58,6 +59,7 @@ class App extends Component {
             <Route path="/blocks" component={Blocks}></Route> */}
             <Route path="/address/:id" component={Address}></Route>
             <Route path="/tx/:id" component={Tx}></Route>
+            <Route component={Error}></Route>
             {/* <Route path="/tx/:id" component={Blocks}></Route> */}
           </Switch>
         </Router>

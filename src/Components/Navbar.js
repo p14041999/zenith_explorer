@@ -5,6 +5,8 @@ import logo from "../Assests/logoblue.svg";
 import MenuIcon from "@material-ui/icons/Menu";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import CommentIcon from "@material-ui/icons/Comment";
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
+import HomeIcon from "@material-ui/icons/Home";
 class Navbar extends Component {
   state = {
     navbar: false,
@@ -29,13 +31,25 @@ class Navbar extends Component {
   render() {
     return (
       <>
-        <div className="container   darkBack" id="navbar">
+        <div className="container darkBack" id="navbar">
           <div className="row-center text-light" id="nav-child1">
-            <Link to="/">
-              <img alt="" src={logo} />
+            {/* {window.location.pathname == "/" ? (
+              <span></span>
+            ) : ( */}
+            <Link to="/" className="text-light">
+              {" "}
+              <ArrowBackIcon style={{ paddingRight: 60 }} />
             </Link>
-            <h2>ZENITH</h2>
-            <span>Explorer (BETA)</span>
+            {/* )} */}
+            <Link
+              to="/"
+              className="row-center text-light"
+              style={{ textDecoration: "none" }}
+            >
+              <img alt="" src={logo} />
+              <h2>ZENITH</h2>
+              <span>Explorer (BETA)</span>
+            </Link>
           </div>
           <div id="nav-child2" className="row-center">
             <button className="mx-1 row-center">
