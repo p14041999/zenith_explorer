@@ -38,7 +38,7 @@ class Navbar extends Component {
             ) : ( */}
             <Link to="/" className="text-light">
               {" "}
-              <ArrowBackIcon style={{ paddingRight: 60 }} />
+              <ArrowBackIcon style={{ paddingRight: 60 }} className="backbtn" />
             </Link>
             {/* )} */}
             <Link

@@ -23,6 +23,15 @@
   #commBtn {
     display: none;
   }
+  .backbtn {
+    padding-right: 25px !important;
+  }
+  .table {
+    overflow: auto;
+  }
+  #tsparticles {
+    height: 100vh;
+  }
   #navbar {
     display: flex;
     align-items: center;
