@@ -14,10 +14,16 @@ class Table extends Component {
     let height = obj.number;
     let timestamp = new Date(obj.timestamp);
     console.log(timestamp);
+    let lastHash = obj.hash;
+    let gasLimit = obj.gasLimit;
+    let difficulty = obj.difficulty;
 
     this.setState({
       height: height,
       timestamp: timestamp.toString(),
+      lastHash,
+      gasLimit,
+      difficulty,
     });
 
     // const objTx = await web3.eth
@@ -76,24 +82,22 @@ class Table extends Component {
           <tr>
             <td>Slot time (1hr average) </td>
             <td id="content">536ms</td>
+          </tr> */}
+          <tr>
+            <td>Last Block Hash</td>
+            <td id="content">{this.state.lastHash}</td>
           </tr>
           <tr>
-            <td>Epoch </td>
-            <td id="content">207</td>
-          </tr>
-          <tr>
-            <td>Epoch progress </td>
-            <td id="content">2.0%</td>
+            <td>Difficulty </td>
+            <td id="content">{this.state.difficulty}</td>
           </tr>
 
           <tr>
-            <td style={{ borderBottom: "none" }}>
-              Epoch time remaining (approx.)
-            </td>
+            <td style={{ borderBottom: "none" }}>Gas Limit</td>
             <td id="content" style={{ borderBottom: "none" }}>
-              ~2d 16h 55m
+              {this.state.gasLimit}
             </td>
-          </tr> */}
+          </tr>
         </table>
       </div>
     );

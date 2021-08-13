@@ -54,7 +54,7 @@ class Navbar extends Component {
           <div id="nav-child2" className="row-center">
             <button className="mx-1 row-center">
               <span className="text-light">Mainnet Beta</span>
-              <ArrowDropDownIcon className="text-light " />
+              {/* <ArrowDropDownIcon className="text-light " /> */}
             </button>
             <div id="commBtn">
               <CommentIcon />

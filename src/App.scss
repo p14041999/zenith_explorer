@@ -333,6 +333,11 @@ p {
     width: 45%;
   }
 }
+#tsparticles {
+  position: fixed;
+  top: 0;
+  z-index: -1;
+}
 .rowcs {
   display: flex;
   justify-content: space-between;

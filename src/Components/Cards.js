@@ -16,7 +16,7 @@ class Cards extends Component {
           </div>
           <div className="card darkBack p-1 px-3 text-light">
             <h3>Total Holdings</h3>
-            <h2 className="text-primary">1M</h2>
+            <h2 className="text-primary">1000</h2>
             <span>/21M</span>
             {/* <p>
               Delinquent stake:{""}
