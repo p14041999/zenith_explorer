@@ -47,11 +47,11 @@ class Table extends Component {
           <tr>
             <td>Balance </td>
             <td id="content">
-              {this.numberWithCommas2(this.state.balance)} ZTC
+              {this.numberWithCommas2(this.state.balance)} Zenith
             </td>
           </tr>
           <tr style={{ borderBottom: "none" }}>
-            <td>ZTC Value</td>
+            <td>Zenith Value</td>
             <td id="content">
               ${this.numberWithCommas2(this.state.price * this.state.balance)}
             </td>

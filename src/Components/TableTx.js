@@ -104,13 +104,15 @@ class Table extends Component {
           </tr>
           <tr>
             <td>Value </td>
-            <td id="content">{this.numberWithCommas2(this.state.value)} ZTC</td>
+            <td id="content">
+              {this.numberWithCommas2(this.state.value)} Zenith
+            </td>
           </tr>
 
           <tr>
             <td style={{ borderBottom: "none" }}>Transaction Fee</td>
             <td id="content" style={{ borderBottom: "none" }}>
-              {this.numberWithCommas2(this.state.gasfees)} ZTC
+              {this.numberWithCommas2(this.state.gasfees)} Zenith
             </td>
           </tr>
         </table>
