@@ -3,6 +3,11 @@ import TxOverview from "./TableTx";
 import "../Styles/Address.scss";
 
 class Tx extends Component {
+  componentDidMount() {
+    console.log(this.props);
+    const { setLocation, match } = this.props;
+    setLocation(match.path);
+  }
   render() {
     return (
       <div>

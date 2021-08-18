@@ -29,22 +29,33 @@ class Navbar extends Component {
   };
 
   render() {
+    console.log("props", this.props);
+    const { location } = this.props;
     return (
       <>
-        <div className="container darkBack" id="navbar">
+        <div
+          className="container darkBack"
+          id="navbar"
+          style={{ paddingTop: 15, paddingBottom: 15 }}
+        >
           <div className="row-center text-light" id="nav-child1">
-            {/* {window.location.pathname == "/" ? (
-              <span></span>
-            ) : ( */}
-            <Link to="/" className="text-light">
-              {" "}
-              <ArrowBackIcon style={{ paddingRight: 60 }} className="backbtn" />
-            </Link>
-            {/* )} */}
+            {location == "/" ? null : (
+              <Link to="/" className="text-light">
+                {" "}
+                <ArrowBackIcon
+                  style={{ paddingRight: 60 }}
+                  className="backbtn"
+                />
+              </Link>
+            )}
             <Link
               to="/"
-              className="row-center text-light"
-              style={{ textDecoration: "none" }}
+              className="row-center text-light logo"
+              style={{
+                textDecoration: "none",
+                position: "absolute",
+                left: "10%",
+              }}
             >
               <img alt="" src={logo} />
               <h2>ZENITH</h2>

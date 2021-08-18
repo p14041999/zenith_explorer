@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 
 class Error extends Component {
+  componentDidMount() {
+    console.log(this.props);
+    const { setLocation, match } = this.props;
+    setLocation(match.path);
+  }
   render() {
     return (
       <div>

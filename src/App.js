@@ -48,6 +48,12 @@ class App extends Component {
 
   //   console.log("status", objRec.status);
   // }
+  state = {
+    location: "/",
+  };
+  setLocation = (val) => {
+    this.setState({ location: val });
+  };
   particlesInit(main) {
     console.log(main);
 
@@ -57,6 +63,7 @@ class App extends Component {
     console.log(container);
   }
   render() {
+    // console.log("props", this.props);
     return (
       <div>
         <Particles
@@ -143,16 +150,52 @@ class App extends Component {
           }}
         />
         <Router>
-          <Navbar />
+          <Navbar location={this.state.location} />
           {/* <Main /> */}
           <Switch>
-            <Route exact={true} path="/" component={Main}></Route>
+            <Route
+              exact={true}
+              path="/"
+              render={(props) => (
+                <Main
+                  {...props}
+                  setLocation={this.setLocation}
+                  location={this.state.location}
+                />
+              )}
+            ></Route>
             {/* <Route path="/transactions" component={Transactions}></Route>
             <Route path="/tokens" component={TokenO}></Route>
             <Route path="/blocks" component={Blocks}></Route> */}
-            <Route path="/address/:id" component={Address}></Route>
-            <Route path="/tx/:id" component={Tx}></Route>
-            <Route component={Error}></Route>
+            <Route
+              path="/address/:id"
+              render={(props) => (
+                <Address
+                  {...props}
+                  setLocation={this.setLocation}
+                  location={this.props.location}
+                />
+              )}
+            ></Route>
+            <Route
+              path="/tx/:id"
+              render={(props) => (
+                <Tx
+                  {...props}
+                  setLocation={this.setLocation}
+                  location={this.props.location}
+                />
+              )}
+            ></Route>
+            <Route
+              render={(props) => (
+                <Error
+                  {...props}
+                  setLocation={this.setLocation}
+                  location={this.props.location}
+                />
+              )}
+            ></Route>
             {/* <Route path="/tx/:id" component={Blocks}></Route> */}
           </Switch>
         </Router>

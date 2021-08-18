@@ -4,7 +4,13 @@ import Trans from "./TableAdd2";
 import "../Styles/Address.scss";
 
 class Address extends Component {
+  componentDidMount() {
+    console.log(this.props);
+    const { setLocation, match } = this.props;
+    setLocation(match.path);
+  }
   render() {
+    console.log("propsAdd", this.props);
     return (
       <div>
         <div className="text-light head py-3">
