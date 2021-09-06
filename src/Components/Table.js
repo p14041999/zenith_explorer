@@ -12,7 +12,7 @@ class Table extends Component {
     // console.log(await web3.eth.getBlock("latest"));
     let obj = await web3.eth.getBlock("latest");
     let height = obj.number;
-    let timestamp = new Date(obj.timestamp);
+    let timestamp = Date(obj.timestamp);
     console.log(timestamp);
     window.blocktime = obj.timestamp;
     let lastHash = obj.hash;
