@@ -5,7 +5,7 @@ import Web3 from "web3";
 class Table extends Component {
   state = {
     balance: 0,
-    price: 1.8,
+    price: 0.2,
     address: "",
   };
   async componentDidMount() {
