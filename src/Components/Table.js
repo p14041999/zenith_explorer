@@ -14,6 +14,7 @@ class Table extends Component {
     let height = obj.number;
     let timestamp = new Date(obj.timestamp);
     console.log(timestamp);
+    window.blocktime = obj.timestamp;
     let lastHash = obj.hash;
     let gasLimit = obj.gasLimit;
     let difficulty = obj.difficulty;
